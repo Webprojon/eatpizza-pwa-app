@@ -4,6 +4,7 @@ import Inputs from "./Inputs";
 import { submitOrders } from "@/actions/actions";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import useFcmToken from "@/hooks/useFcmToken";
 
 export default function DeliveryForm({
 	basketItems,
@@ -12,6 +13,7 @@ export default function DeliveryForm({
 	basketItems: Basket[];
 	orderedItems: OrderedItems[];
 }) {
+	const { token } = useFcmToken();
 	const [userName, setUserName] = useState("");
 	const [userPhoneNumber, setUserPhoneNumber] = useState("");
 	const [userStreet, setUserStreet] = useState("");
@@ -35,6 +37,25 @@ export default function DeliveryForm({
 		} catch (error) {
 			console.error("Error submitting order:", error);
 		}
+	};
+
+	const handleTestNotification = async () => {
+		const response = await fetch("/send-notification", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				token: token,
+				title: "Order Confirmed!",
+				message:
+					"Thank you! Your delicious pizza is being prepared and will be delivered shortly.",
+				link: "/",
+			}),
+		});
+
+		const data = await response.json();
+		console.log(data);
 	};
 
 	return (
@@ -82,6 +103,8 @@ export default function DeliveryForm({
 					</div>
 				</div>
 				<button
+					disabled={!token}
+					onClick={handleTestNotification}
 					className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-md transition-all
 							mt-[1.5rem]"
 				>
