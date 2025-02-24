@@ -21,8 +21,8 @@ const Inputs: FC<InputProps> = ({
 			type={type}
 			autoComplete="off"
 			placeholder={placeholder}
-			className={`outline-green-500 tracking-wider text-gray-500 placeholder:text-gray-500 p-3 rounded-md
-        dark:outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 bg-transparent border border-gray-400 dark:border-gray-700 ${className}`}
+			className={`tracking-wider text-gray-500 placeholder:text-gray-500 py-3 px-4 rounded-md
+      outline-none dark:bg-transparent dark:text-gray-300 dark:placeholder:text-gray-300 bg-transparent border border-gray-400 dark:border-gray-700 ${className}`}
 			{...props}
 		/>
 	);

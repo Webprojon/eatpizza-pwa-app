@@ -39,6 +39,10 @@ export default function DeliveryForm({
 		}
 	};
 
+	const handleChangeAddress = async (e: React.FormEvent) => {
+		e.preventDefault();
+	};
+
 	const handleTestNotification = async () => {
 		const response = await fetch("/send-notification", {
 			method: "POST",
@@ -68,48 +72,66 @@ export default function DeliveryForm({
 				<div className="flex flex-col md:flex-row gap-6">
 					<Inputs
 						name="username"
+						placeholder="Your name"
 						onChange={(e) => setUserName(e.target.value)}
-						placeholder={
-							orderedItems[0] ? orderedItems[0].username : "Your name"
-						}
+						value={orderedItems[0] && orderedItems[0].username}
 					/>
-					<Inputs
-						type="number"
-						name="userphonenumber"
-						onChange={(e) => setUserPhoneNumber(e.target.value)}
-						placeholder={
-							orderedItems[0] ? orderedItems[0].phoneNumber : "+48 576 375 586"
-						}
-					/>
+					<div className="tracking-wider py-3 px-4 rounded-md bg-transparent border text-gray-500 dark:text-gray-300 border-gray-400 dark:border-gray-700">
+						<span className="mr-[.3rem]">+48</span>
+						<input
+							required
+							type="number"
+							autoComplete="off"
+							name="userphonenumber"
+							placeholder="576 375 586"
+							onChange={(e) => setUserPhoneNumber(e.target.value)}
+							value={orderedItems[0] && orderedItems[0].phoneNumber}
+							className="placeholder:text-gray-500 outline-none bg-transparent dark:placeholder:text-gray-300"
+						/>
+					</div>
 					<Inputs
 						name="userstreet"
-						placeholder={orderedItems[0] ? orderedItems[0].street : "Street"}
+						placeholder="Street"
 						onChange={(e) => setUserStreet(e.target.value)}
+						value={orderedItems[0] && orderedItems[0].street}
 					/>
 					<div className="flex gap-x-4">
 						<Inputs
 							type="number"
+							placeholder="Flat"
 							className="w-[8rem]"
 							name="userflatnumber"
+							value={orderedItems[0] && orderedItems[0].flat}
 							onChange={(e) => setUserFlatNumber(e.target.value)}
-							placeholder={orderedItems[0] ? orderedItems[0].flat : "Flat"}
 						/>
 						<Inputs
-							name="userfloornumber"
-							placeholder={orderedItems[0] ? orderedItems[0].floor : "Floor"}
+							type="number"
+							placeholder="Floor"
 							className="w-[8rem]"
+							name="userfloornumber"
+							value={orderedItems[0] && orderedItems[0].floor}
 							onChange={(e) => setUserFloorNumber(e.target.value)}
 						/>
 					</div>
 				</div>
-				<button
-					disabled={!token}
-					onClick={handleTestNotification}
-					className="self-end bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-md transition-all
-							mt-[1.5rem]"
-				>
-					Confirm Orders
-				</button>
+
+				<div className="flex gap-4 md:self-end">
+					<button
+						onClick={handleChangeAddress}
+						className="self-start bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-md transition-all
+					mt-[1.5rem]"
+					>
+						Change address
+					</button>
+					<button
+						disabled={!token}
+						onClick={handleTestNotification}
+						className="self-start bg-gradient-green font-semibold tracking-wider text-white px-3 py-2 rounded-md transition-all
+					mt-[1.5rem]"
+					>
+						Confirm Orders
+					</button>
+				</div>
 			</form>
 		</div>
 	);
