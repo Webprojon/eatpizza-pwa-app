@@ -1,33 +1,31 @@
 import { IoLocationOutline } from "react-icons/io5";
-import {
-	MdOutlineDeliveryDining,
-	MdOutlineFeedback,
-	MdRestaurantMenu,
-} from "react-icons/md";
+import { MdRestaurantMenu } from "react-icons/md";
+import { TbTruckDelivery } from "react-icons/tb";
+import { RiMessage2Line } from "react-icons/ri";
 
 export const LINKS = [
 	{
 		id: 1,
 		href: "/",
-		icon: <MdRestaurantMenu className="size-7 sm:size-6" />,
+		icon: <MdRestaurantMenu className="size-6" />,
 		label: "Menu",
 	},
 	{
 		id: 2,
 		href: "/delivery",
-		icon: <MdOutlineDeliveryDining className="size-7 sm:size-6" />,
+		icon: <TbTruckDelivery className="size-6" />,
 		label: "Delivery",
 	},
 	{
 		id: 3,
 		href: "/feedback",
-		icon: <MdOutlineFeedback className="size-7 sm:size-6" />,
+		icon: <RiMessage2Line className="size-6" />,
 		label: "Feedback",
 	},
 	{
 		id: 4,
 		href: "/address",
-		icon: <IoLocationOutline className="size-7 sm:size-6" />,
+		icon: <IoLocationOutline className="size-6" />,
 		label: "Address",
 	},
 ];

@@ -13,10 +13,10 @@ export default async function Delivery() {
 	const orderedItems = await prisma.orderedItems.findMany();
 
 	return (
-		<div className="md:h-[calc(100vh-11vh)] bg-slate-100 dark:bg-black/40 max-w-[1250px] mx-auto font-semibold tracking-wider rounded-md">
+		<div className="md:h-[calc(100vh-11vh)] max-w-[1250px] mx-auto font-semibold tracking-wider rounded-md">
 			{basketItems.length === 0 ? (
-				<div className="w-full md:w-[55%] lg:w-[45%] h-[25vh] mx-auto flex flex-col gap-y-6 justify-center items-center sm:rounded-md md:pt-14">
-					<span className="text-lg">No item selected yet 😏</span>
+				<div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] flex flex-col gap-y-6 justify-center items-center">
+					<span className="text-lg">No item selected yet 🤷‍♂️</span>
 					<Link
 						href="/"
 						className="flex bg-gradient-green bg-gradient-green-hover text-white transition-all rounded-md py-3 px-4"
@@ -25,7 +25,7 @@ export default async function Delivery() {
 					</Link>
 				</div>
 			) : (
-				<div>
+				<div className="bg-slate-100 dark:bg-black/40 mb-[5.7rem]">
 					{/* Header */}
 					<div className="flex justify-between items-center w-full h-10 py-8 px-3">
 						<Link href="/" className="flex items-center cursor-pointer">

@@ -71,13 +71,13 @@ export default function DesktopNavbar() {
 				</nav>
 			</header>
 
-			<header className="h-[10vh] flex justify-center sm:hidden bg-slate-100 dark:bg-slate-900 fixed bottom-0 w-full z-50 border-t border-gray-300 dark:border-gray-600 tracking-wider">
+			<header className="h-[9vh] flex justify-center sm:hidden bg-slate-100 dark:bg-slate-900 fixed bottom-0 w-full z-50 border-t border-gray-300 dark:border-gray-600 tracking-wider">
 				<nav className="flex items-center w-full max-w-[410px] justify-between px-3">
 					{LINKS.map((link) => (
 						<Link
 							key={link.id}
 							href={link.href}
-							className={`flex flex-col items-center gap-y-1 text-sm
+							className={`flex flex-col items-center gap-y-1 text-[12px]
 								${pathname === link.href && "text-red-600"}
 								`}
 						>

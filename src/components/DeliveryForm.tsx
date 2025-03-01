@@ -63,7 +63,7 @@ export default function DeliveryForm({
 	};
 
 	return (
-		<div className="px-3 py-5">
+		<div className="px-3 pt-5 pb-8">
 			<h2 className="mb-2 font-bold text-gray-600 dark:text-gray-300 tracking-wider text-lg">
 				Contact information
 			</h2>
