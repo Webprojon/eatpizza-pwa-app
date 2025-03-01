@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaLocationDot } from "react-icons/fa6";
 
-export default function MobileNavbar() {
+export default function TabletNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
@@ -35,7 +35,7 @@ export default function MobileNavbar() {
 				className={`absolute left-0 top-[5.6rem] w-full h-screen bg-slate-100 dark:bg-slate-900 flex flex-col items-center gap-y-10 z-10 font-medium text-[20px] transition-transform duration-300 pt-9 px-3
 					 ${isOpen ? "translate-x-0" : "-translate-x-full"} md:translate-x-0`}
 			>
-				{LINKS.map((link) => (
+				{LINKS.slice(0, -2).map((link) => (
 					<Link
 						key={link.id}
 						href={link.href}

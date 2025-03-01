@@ -2,6 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdRestaurantMenu } from "react-icons/md";
 import { TbTruckDelivery } from "react-icons/tb";
 import { RiMessage2Line } from "react-icons/ri";
+import { FaRegUser } from "react-icons/fa";
 
 export const LINKS = [
 	{
@@ -27,5 +28,11 @@ export const LINKS = [
 		href: "/address",
 		icon: <IoLocationOutline className="size-6" />,
 		label: "Address",
+	},
+	{
+		id: 5,
+		href: "/profile",
+		icon: <FaRegUser className="size-6" />,
+		label: "Profile",
 	},
 ];

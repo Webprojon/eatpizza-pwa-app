@@ -1,6 +1,5 @@
 import prisma from "@/lib/db";
 import ProductCards from "@/components/ProductCards";
-import MobileBasket from "@/components/Basket-Components/MobileBasket";
 import DesktopBasket from "@/components/Basket-Components/DesktopBasket";
 
 export default async function Products() {
@@ -8,7 +7,6 @@ export default async function Products() {
 
 	return (
 		<section className="max-w-[1250px] mx-auto my-4 flex flex-row justify-center lg:justify-between">
-			<MobileBasket />
 			<div className="px-2 sm:px-0 sm:mt-0">
 				<ProductCards products={products} />
 			</div>
