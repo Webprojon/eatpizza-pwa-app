@@ -8,7 +8,10 @@ export default function MobileNavbar() {
 	const [isOpen, setIsOpen] = useState(false);
 
 	return (
-		<header className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
+		<header
+			className="hidden sm:block md:hidden"
+			onClick={() => setIsOpen(!isOpen)}
+		>
 			<div
 				onClick={() => setIsOpen((prev) => !prev)}
 				className="flex flex-col gap-[4.5px] cursor-pointer"

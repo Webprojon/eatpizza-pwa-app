@@ -25,7 +25,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 			return selectValue in categories
 				? products.filter(
 						(product) => product.itemCategory === categories[selectValue],
-				  )
+					)
 				: products;
 		};
 
@@ -50,7 +50,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 					name="categories"
 					value={selectValue}
 					onChange={handleSelectValue}
-					className="appearance-none bg-slate-100 rounded-md py-[.7rem] sm:py-[.5rem] px-4 tracking-wider
+					className="hidden sm:flex appearance-none bg-slate-100 rounded-md py-[.7rem] sm:py-[.5rem] px-4 tracking-wider
 				dark:bg-black/40 text-gray-600 dark:text-gray-300 cursor-pointer outline-none"
 				>
 					<option value="all">All products</option>
@@ -79,7 +79,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 				<span className="text-lg tracking-wider">Product not found 😏</span>
 			)}
 
-			<div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8">
+			<div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-3 gap-6 md:gap-8 mb-[5.5rem] sm:mb-0">
 				{filteredItems.map((product, index) => (
 					<motion.div
 						variants={fadeInAnimationsVariants}
