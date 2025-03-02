@@ -21,7 +21,7 @@ export default async function Product({
 	}
 
 	return (
-		<div className="relative h-screen md:h-[calc(100vh-11vh)] tracking-wider flex max-w-[1250px] mx-auto rounded-md bg-slate-100 dark:bg-black/40">
+		<div className="relative h-[calc(100vh-18vh)] md:h-[calc(100vh-11vh)] tracking-wider flex max-w-[1250px] mx-auto rounded-md bg-slate-100 dark:bg-black/40">
 			<Link href={"/"} className="absolute top-6 right-5">
 				<CgClose className="size-7" />
 			</Link>

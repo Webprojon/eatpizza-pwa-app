@@ -1,25 +1,22 @@
 import prisma from "@/lib/db";
 import Link from "next/link";
-import { FaCartShopping } from "react-icons/fa6";
+import { RiShoppingCart2Line } from "react-icons/ri";
 
 export default async function MobileBasket() {
 	const basketItems = await prisma.basket.findMany();
 
 	return (
-		<div className="block md:hidden">
-			{basketItems.length === 0 ? (
-				""
-			) : (
-				<Link
-					href="/delivery"
-					className="fixed bottom-6 right-4 z-10 bg-red-600 dark:bg-red-900 py-3 px-4 rounded-md"
-				>
-					<span className="flex items-center font-semibold tracking-wider text-white text-[18px]">
-						<FaCartShopping className="mr-3 size-5" />
-						{basketItems[0].itemPrice} zł
-					</span>
-				</Link>
+		<Link
+			href="/delivery"
+			className="absolute top-[1.6rem] sm:top-[2.4rem] right-[7.9rem] sm:right-[9rem] z-[200] md:hidden"
+		>
+			{basketItems.length > 0 && (
+				<div className="absolute -top-3 left-4 flex justify-center items-center w-5 h-5 bg-red-500 rounded-full text-sm text-white">
+					{basketItems.length}
+				</div>
 			)}
-		</div>
+
+			<RiShoppingCart2Line className="size-6" />
+		</Link>
 	);
 }

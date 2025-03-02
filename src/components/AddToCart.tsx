@@ -59,7 +59,7 @@ export default function AddToCart({
 
 		try {
 			await addItem(product.id, productPrice[index]);
-			toast.success("Item added successfully 🥳");
+			toast.success("Item added!");
 		} catch (error) {
 			console.error("Error adding product:", error);
 		}
@@ -85,7 +85,7 @@ export default function AddToCart({
 
 	return (
 		<>
-			<div className="flex rounded-sm my-6 border border-gray-200 dark:border-slate-700">
+			<div className="flex rounded-sm my-4 border border-gray-200 dark:border-slate-700">
 				{volumesToMap.map((volume: number, idx: number) => {
 					const isSelected =
 						selectedVolume[index] === volume ||
@@ -119,7 +119,7 @@ export default function AddToCart({
 				})}
 			</div>
 
-			<div className="flex justify-between items-end mt-10">
+			<div className="flex justify-between items-end mt-5">
 				<div className="text-md text-gray-700 dark:text-gray-400 font-bold pr-2">
 					<span>{productPrice[index] || product.itemPrice + "." + 99} zł</span>
 				</div>

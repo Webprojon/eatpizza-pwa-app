@@ -50,7 +50,6 @@ export default function RootLayout({
 					{/*<GlobalContextProvider>*/}
 					<DesktopNavbar />
 					{children}
-					{/*<Footer />*/}
 					<Toaster position="top-center" />
 					{/*</GlobalContextProvider>*/}
 				</ThemeContextProvider>

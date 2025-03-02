@@ -7,7 +7,6 @@ import NavbarLogo from "./NavbarLogo";
 import ThemeIcons from "./ThemeIcons";
 import TabletNavbar from "./TabletNavbar";
 import MobileNavbar from "./MobileNavbar";
-import NavbarCart from "./NavbarCart";
 import userImg from "../../../public/general-imgs/manimg.webp";
 import Image from "next/image";
 
@@ -40,7 +39,6 @@ export default function DesktopNavbar() {
 					</div>
 
 					<div className="flex items-center gap-x-7">
-						<NavbarCart />
 						<VscSettings className="sm:hidden size-6" />
 						<ThemeIcons />
 

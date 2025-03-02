@@ -8,7 +8,7 @@ export default function ClearItems() {
 	const handleClear = async () => {
 		try {
 			await clearItems();
-			toast.error("All Items cleared successfully 😏");
+			toast.error("All Items cleared!");
 		} catch (error) {
 			console.error("Error clearing basket:", error);
 		}

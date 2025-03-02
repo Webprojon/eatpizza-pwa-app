@@ -8,7 +8,7 @@ export default function DeleteItem({ itemId }: { itemId: string }) {
 		e.preventDefault();
 		try {
 			await deleteItem(itemId);
-			toast.error("Item deleted successfully 😏");
+			toast.error("Item deleted!");
 		} catch (error) {
 			console.error("Error deleting product:", error);
 		}
