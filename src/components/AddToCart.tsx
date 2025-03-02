@@ -95,9 +95,9 @@ export default function AddToCart({
 								product.itemCategory === "pizza"
 									? "SM"
 									: product.itemCategory === "drink"
-									? "L"
-									: "ML"
-						  }`
+										? "L"
+										: "ML"
+							}`
 						: volume;
 
 					return (

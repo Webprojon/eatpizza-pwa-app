@@ -8,7 +8,8 @@ import ThemeIcons from "./ThemeIcons";
 import TabletNavbar from "./TabletNavbar";
 import MobileNavbar from "./MobileNavbar";
 import NavbarCart from "./NavbarCart";
-import { FaRegUserCircle } from "react-icons/fa";
+import userImg from "../../../public/general-imgs/manimg.webp";
+import Image from "next/image";
 
 export default function DesktopNavbar() {
 	return (
@@ -16,7 +17,11 @@ export default function DesktopNavbar() {
 			<header className="bg-slate-100 dark:bg-slate-900 sticky top-0 z-50 border-b border-gray-300 dark:border-gray-600 tracking-wider">
 				<nav className="h-[9vh] sm:h-[11vh] max-w-[1250px] mx-auto flex items-center justify-between px-3 xl:px-0">
 					<div className="sm:hidden flex items-center gap-x-3">
-						<FaRegUserCircle className="size-6" />
+						<Image
+							src={userImg}
+							alt="user img"
+							className="w-9 h-9 rounded-full object-cover"
+						/>
 						<span className="font-semibold text-lg">Welcome John!</span>
 					</div>
 
