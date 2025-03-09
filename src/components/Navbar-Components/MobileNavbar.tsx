@@ -1,3 +1,4 @@
+"use client";
 import { LINKS } from "@/lib/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -13,8 +14,8 @@ export default function MobileNavbar() {
 					<Link
 						key={link.id}
 						href={link.href}
-						className={`flex flex-col items-center gap-y-1 text-[12px]
-								${pathname === link.href && "text-red-600"}
+						className={`h-full flex flex-col justify-center items-center gap-y-1 text-[12px]
+								${pathname === link.href && "text-red-600 border-t border-red-600"}
 								`}
 					>
 						{link.icon} {link.label}

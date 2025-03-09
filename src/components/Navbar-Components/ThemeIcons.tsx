@@ -1,3 +1,4 @@
+"use client";
 import { useTheme } from "@/context/theme-context";
 import React from "react";
 import { HiOutlineSun } from "react-icons/hi";

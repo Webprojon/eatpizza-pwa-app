@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
 import { LINKS } from "@/lib/data";
@@ -9,8 +8,9 @@ import TabletNavbar from "./TabletNavbar";
 import MobileNavbar from "./MobileNavbar";
 import userImg from "../../../public/general-imgs/manimg.webp";
 import Image from "next/image";
+import MobileBasket from "../Basket-Components/MobileBasket";
 
-export default function DesktopNavbar() {
+export default async function DesktopNavbar() {
 	return (
 		<>
 			<header className="bg-slate-100 dark:bg-slate-900 sticky top-0 z-50 border-b border-gray-300 dark:border-gray-600 tracking-wider">
@@ -39,6 +39,7 @@ export default function DesktopNavbar() {
 					</div>
 
 					<div className="flex items-center gap-x-7">
+						<MobileBasket />
 						<VscSettings className="sm:hidden size-6" />
 						<ThemeIcons />
 
