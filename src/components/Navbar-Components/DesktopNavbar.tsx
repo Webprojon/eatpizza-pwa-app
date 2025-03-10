@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
 import { LINKS } from "@/lib/data";
-import { VscSettings } from "react-icons/vsc";
 import NavbarLogo from "./NavbarLogo";
 import ThemeIcons from "./ThemeIcons";
 import TabletNavbar from "./TabletNavbar";
@@ -9,6 +8,7 @@ import MobileNavbar from "./MobileNavbar";
 import userImg from "../../../public/general-imgs/manimg.webp";
 import Image from "next/image";
 import MobileBasket from "../Basket-Components/MobileBasket";
+import SelectCategory from "./SelectCategory";
 
 export default async function DesktopNavbar() {
 	return (
@@ -40,7 +40,7 @@ export default async function DesktopNavbar() {
 
 					<div className="flex items-center gap-x-7">
 						<MobileBasket />
-						<VscSettings className="sm:hidden size-6" />
+						<SelectCategory />
 						<ThemeIcons />
 
 						<Link

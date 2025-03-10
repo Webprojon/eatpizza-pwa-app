@@ -1,45 +1,45 @@
-//"use client";
-//import React, { useState, createContext, useContext } from "react";
+"use client";
+import React, { useState, createContext, useContext } from "react";
 
-//type GlobalContextProviderProps = {
-//	children: React.ReactNode;
-//};
+type GlobalContextProviderProps = {
+	children: React.ReactNode;
+};
 
-//type GlobalDataType = {
-//	selectedItemPrice: number;
-//	setSelectedItemPrice: React.Dispatch<React.SetStateAction<number>>;
-//};
+type GlobalDataType = {
+	selectValue: string;
+	setSelectValue: React.Dispatch<React.SetStateAction<string>>;
+};
 
-//const defaultGlobalContextValue: GlobalDataType = {
-//	selectedItemPrice: 0,
-//	setSelectedItemPrice: () => {},
-//};
+const defaultGlobalContextValue: GlobalDataType = {
+	selectValue: "all",
+	setSelectValue: () => {},
+};
 
-//const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
+const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
 
-//export default function GlobalContextProvider({
-//	children,
-//}: GlobalContextProviderProps) {
-//	const [selectedItemPrice, setSelectedItemPrice] = useState<number>(0);
+export default function GlobalContextProvider({
+	children,
+}: GlobalContextProviderProps) {
+	const [selectValue, setSelectValue] = useState<string>("all");
 
-//	const contextValue: GlobalDataType = {
-//		selectedItemPrice,
-//		setSelectedItemPrice,
-//	};
+	const contextValue: GlobalDataType = {
+		selectValue,
+		setSelectValue,
+	};
 
-//	return (
-//		<GlobalContext.Provider value={contextValue}>
-//			{children}
-//		</GlobalContext.Provider>
-//	);
-//}
+	return (
+		<GlobalContext.Provider value={contextValue}>
+			{children}
+		</GlobalContext.Provider>
+	);
+}
 
-//export function useGlobalContext() {
-//	const context = useContext(GlobalContext);
+export function useGlobalContext() {
+	const context = useContext(GlobalContext);
 
-//	if (!context) {
-//		console.warn("useGlobalContext must be used within GlobalContextProvider");
-//	}
+	if (!context) {
+		console.warn("useGlobalContext must be used within GlobalContextProvider");
+	}
 
-//	return context || defaultGlobalContextValue;
-//}
+	return context || defaultGlobalContextValue;
+}

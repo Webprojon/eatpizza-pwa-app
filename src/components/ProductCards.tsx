@@ -7,10 +7,11 @@ import { motion } from "framer-motion";
 import { IoSearchOutline } from "react-icons/io5";
 import AddToCart from "./AddToCart";
 import { Products } from "@prisma/client";
+import { useGlobalContext } from "@/context/global-context";
 
 export default function ProductCards({ products }: { products: Products[] }) {
 	const [items, setItems] = useState(products);
-	const [selectValue, setSelectValue] = useState<string>("all");
+	const { selectValue, setSelectValue } = useGlobalContext();
 	const [searchValue, setSearchValue] = useState<string>("");
 
 	useEffect(() => {
@@ -37,11 +38,20 @@ export default function ProductCards({ products }: { products: Products[] }) {
 		setSelectValue(event.target.value);
 	};
 
+	const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
+		const target = event.currentTarget as HTMLSpanElement;
+		const value = target.innerText.toLowerCase();
+		setSelectValue(value);
+	};
+
 	const filteredItems = items.filter((item) =>
 		searchValue
 			? item.itemName.toLowerCase().includes(searchValue.toLowerCase())
 			: true,
 	);
+
+	const spanStyles =
+		"bg-slate-100 dark:bg-black/40 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer";
 
 	return (
 		<div>
@@ -50,7 +60,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 					name="categories"
 					value={selectValue}
 					onChange={handleSelectValue}
-					className="hidden sm:flex appearance-none bg-slate-100 rounded-md py-[.7rem] sm:py-[.5rem] px-4 tracking-wider
+					className="hidden sm:flex lg:hidden appearance-none bg-slate-100 rounded-md py-[.7rem] sm:py-[.5rem] px-4 tracking-wider
 				dark:bg-black/40 text-gray-600 dark:text-gray-300 cursor-pointer outline-none"
 				>
 					<option value="all">All products</option>
@@ -59,6 +69,24 @@ export default function ProductCards({ products }: { products: Products[] }) {
 					<option value="drinks">Drinks</option>
 					<option value="creams">Ice creams</option>
 				</select>
+
+				<div className="hidden xl:flex gap-x-4 tracking-wider">
+					<span className={spanStyles} onClick={handleClick}>
+						All Products
+					</span>
+					<span className={spanStyles} onClick={handleClick}>
+						Pizzas
+					</span>
+					<span className={spanStyles} onClick={handleClick}>
+						Sauces
+					</span>
+					<span className={spanStyles} onClick={handleClick}>
+						Drinks
+					</span>
+					<span className={spanStyles} onClick={handleClick}>
+						Creams
+					</span>
+				</div>
 
 				<div
 					className="flex items-center gap-[.6rem] text-gray-600 dark:text-gray-300 bg-slate-100 rounded-md dark:bg-black/40 

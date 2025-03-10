@@ -34,11 +34,10 @@ export default async function DesktopBasket() {
 			)}
 
 			{basketItems.length === 0 ? (
-				<div className="mt-6 mb-10 flex flex-col items-center gap-y-6">
+				<div className="mt-5 mb-3 flex flex-col items-center gap-y-6">
 					<Image src={basket} alt="basket" className="mt-4 w-[22vh]" />
 					<p className="animate-pulse text-[15px] text-center px-3 text-gray-600 dark:text-gray-300 font-medium">
-						Your cart is empty. Add items from the menu or repeat your previous
-						order.
+						Your cart is empty. Add items from the menu.
 					</p>
 				</div>
 			) : (
