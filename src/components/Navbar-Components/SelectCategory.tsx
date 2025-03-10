@@ -20,7 +20,7 @@ export default function SelectCategory() {
 	return (
 		<div>
 			<div
-				className={`absolute top-[4.8rem] right-3 px-6 py-3 flex flex-col gap-y-4 text-lg sm:hidden bg-slate-100 dark:bg-slate-900 rounded-md
+				className={`absolute top-[4.7rem] right-[.5rem] px-6 py-3 flex flex-col gap-y-4 text-lg sm:hidden bg-slate-100 dark:bg-slate-900 rounded-md
 				${isOpen ? "flex" : "hidden"}
 				`}
 			>

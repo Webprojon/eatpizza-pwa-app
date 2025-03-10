@@ -15,7 +15,7 @@ export default function MobileNavbar() {
 						key={link.id}
 						href={link.href}
 						className={`h-full flex flex-col justify-center items-center gap-y-1 text-[12px]
-								${pathname === link.href && "text-red-600 border-t border-red-600"}
+								${pathname === link.href && "text-red-600 border-t-[.1rem] border-red-600"}
 								`}
 					>
 						{link.icon} {link.label}

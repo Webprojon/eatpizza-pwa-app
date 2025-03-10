@@ -106,7 +106,7 @@ export default function AddToCart({
 							className={clsx(
 								"w-full text-center py-3 sm:py-2 relative text-sm cursor-pointer rounded-sm text-gray-600 dark:text-gray-400",
 								{
-									"bg-gray-200 text-gray-700 dark:bg-slate-700": isSelected,
+									"bg-slate-200 text-gray-700 dark:bg-slate-700": isSelected,
 								},
 							)}
 							onClick={() =>
@@ -124,14 +124,12 @@ export default function AddToCart({
 					<span>{productPrice[index] || product.itemPrice + "." + 99} zł</span>
 				</div>
 
-					<form onSubmit={handleAddItem}>
-						<button
-							className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all text-white content-start font-semibold px-4 py-3 sm:py-2 rounded-md tracking-wider"
-						>
-							Add to
-							<FaCartShopping className="ml-2" />
-						</button>
-					</form>
+				<form onSubmit={handleAddItem}>
+					<button className="bg-gradient-green bg-gradient-green-hover flex place-items-center text-sm transition-all text-white content-start font-semibold px-4 py-3 sm:py-2 rounded-md tracking-wider">
+						Add to
+						<FaCartShopping className="ml-2" />
+					</button>
+				</form>
 			</div>
 		</>
 	);

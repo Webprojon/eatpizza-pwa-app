@@ -50,9 +50,6 @@ export default function ProductCards({ products }: { products: Products[] }) {
 			: true,
 	);
 
-	const spanStyles =
-		"bg-slate-100 dark:bg-black/40 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer";
-
 	return (
 		<div>
 			<form className="md:w-[600px] lg:w-[899px] flex flex-col justify-between sm:flex-row gap-x-6 gap-y-4 items-start mb-4">
@@ -71,19 +68,34 @@ export default function ProductCards({ products }: { products: Products[] }) {
 				</select>
 
 				<div className="hidden xl:flex gap-x-4 tracking-wider">
-					<span className={spanStyles} onClick={handleClick}>
+					<span
+						className={`hover:bg-slate-200 hover:dark:bg-black/60 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer ${selectValue === "all" ? "bg-slate-200 dark:bg-black/60" : selectValue === "all products" ? "bg-slate-200 dark:bg-black/60" : "bg-slate-100 dark:bg-black/40"}`}
+						onClick={handleClick}
+					>
 						All Products
 					</span>
-					<span className={spanStyles} onClick={handleClick}>
+					<span
+						className={`hover:bg-slate-200 hover:dark:bg-black/60 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer ${selectValue === "pizzas" ? "bg-slate-200 dark:bg-black/60" : "bg-slate-100 dark:bg-black/40"}`}
+						onClick={handleClick}
+					>
 						Pizzas
 					</span>
-					<span className={spanStyles} onClick={handleClick}>
+					<span
+						className={`hover:bg-slate-200 hover:dark:bg-black/60 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer ${selectValue === "sauces" ? "bg-slate-200 dark:bg-black/60" : "bg-slate-100 dark:bg-black/40"}`}
+						onClick={handleClick}
+					>
 						Sauces
 					</span>
-					<span className={spanStyles} onClick={handleClick}>
+					<span
+						className={`hover:bg-slate-200 hover:dark:bg-black/60 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer ${selectValue === "drinks" ? "bg-slate-200 dark:bg-black/60" : "bg-slate-100 dark:bg-black/40"}`}
+						onClick={handleClick}
+					>
 						Drinks
 					</span>
-					<span className={spanStyles} onClick={handleClick}>
+					<span
+						className={`hover:bg-slate-200 hover:dark:bg-black/60 py-[.6rem] sm:py-[.5rem] px-3 rounded-md cursor-pointer ${selectValue === "creams" ? "bg-slate-200 dark:bg-black/60" : "bg-slate-100 dark:bg-black/40"}`}
+						onClick={handleClick}
+					>
 						Creams
 					</span>
 				</div>
@@ -127,7 +139,7 @@ export default function ProductCards({ products }: { products: Products[] }) {
 									${
 										product.itemCategory == "pizza"
 											? "h-[8.5rem] w-[9rem] sm:h-[11rem] sm:w-[11rem] hover:animate-spin-17s"
-											: "h-[8rem] w-[8rem]"
+											: "h-[8rem] w-[9rem]"
 									}
 									`}
 									src={product.itemImg}
