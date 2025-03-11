@@ -5,7 +5,7 @@ import { VscSettings } from "react-icons/vsc";
 
 export default function SelectCategory() {
 	const [isOpen, setIsOpen] = useState(false);
-	const { setSelectValue } = useGlobalContext();
+	const { selectValue, setSelectValue } = useGlobalContext();
 
 	const handleClick = (event: React.MouseEvent<HTMLSpanElement>) => {
 		const target = event.currentTarget as HTMLSpanElement;
@@ -17,6 +17,11 @@ export default function SelectCategory() {
 	const toggleModal = () => {
 		setIsOpen(!isOpen);
 	};
+
+	const spanStyles = (category: string) => {
+		return `${selectValue === category && "text-slate-400"}`;
+	};
+
 	return (
 		<div>
 			<div
@@ -24,11 +29,21 @@ export default function SelectCategory() {
 				${isOpen ? "flex" : "hidden"}
 				`}
 			>
-				<span onClick={handleClick}>All Products</span>
-				<span onClick={handleClick}>Pizzas</span>
-				<span onClick={handleClick}>Sauces</span>
-				<span onClick={handleClick}>Drinks</span>
-				<span onClick={handleClick}>Creams</span>
+				<span className={spanStyles("all products")} onClick={handleClick}>
+					All Products
+				</span>
+				<span className={spanStyles("pizzas")} onClick={handleClick}>
+					Pizzas
+				</span>
+				<span className={spanStyles("sauces")} onClick={handleClick}>
+					Sauces
+				</span>
+				<span className={spanStyles("drinks")} onClick={handleClick}>
+					Drinks
+				</span>
+				<span className={spanStyles("creams")} onClick={handleClick}>
+					Creams
+				</span>
 			</div>
 
 			<VscSettings onClick={toggleModal} className="sm:hidden size-6" />

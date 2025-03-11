@@ -11,7 +11,7 @@ type GlobalDataType = {
 };
 
 const defaultGlobalContextValue: GlobalDataType = {
-	selectValue: "all",
+	selectValue: "all products",
 	setSelectValue: () => {},
 };
 
@@ -20,7 +20,7 @@ const GlobalContext = createContext<GlobalDataType>(defaultGlobalContextValue);
 export default function GlobalContextProvider({
 	children,
 }: GlobalContextProviderProps) {
-	const [selectValue, setSelectValue] = useState<string>("all");
+	const [selectValue, setSelectValue] = useState<string>("all products");
 
 	const contextValue: GlobalDataType = {
 		selectValue,

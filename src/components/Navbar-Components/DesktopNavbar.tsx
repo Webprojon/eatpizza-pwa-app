@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { FaLocationDot } from "react-icons/fa6";
-import { LINKS } from "@/lib/data";
 import NavbarLogo from "./NavbarLogo";
 import ThemeIcons from "./ThemeIcons";
 import TabletNavbar from "./TabletNavbar";
@@ -9,6 +8,7 @@ import userImg from "../../../public/general-imgs/manimg.webp";
 import Image from "next/image";
 import MobileBasket from "../Basket-Components/MobileBasket";
 import SelectCategory from "./SelectCategory";
+import NavbarLinks from "./NavbarLinks";
 
 export default async function DesktopNavbar() {
 	return (
@@ -25,18 +25,7 @@ export default async function DesktopNavbar() {
 					</div>
 
 					<NavbarLogo />
-
-					<div className="hidden md:flex md:gap-x-6 lg:gap-x-12 text-[17px] font-medium">
-						{LINKS.slice(0, -2).map((link) => (
-							<Link
-								key={link.id}
-								href={link.href}
-								className="flex items-center gap-x-[8px]"
-							>
-								{link.icon} {link.label}
-							</Link>
-						))}
-					</div>
+					<NavbarLinks />
 
 					<div className="flex items-center gap-x-7">
 						<MobileBasket />
