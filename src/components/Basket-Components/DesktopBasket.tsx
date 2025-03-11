@@ -1,5 +1,4 @@
 import basket from "../../../public/general-imgs/basket.png";
-import { FaChevronRight } from "react-icons/fa6";
 import Image from "next/image";
 import animpizza from "../../../public/general-imgs/animpizza.png";
 import prisma from "@/lib/db";
@@ -67,7 +66,6 @@ export default async function DesktopBasket() {
 											>
 												traditional
 											</span>
-											{/*<span>{item.itemSize}</span>*/}
 										</div>
 									</div>
 									<DeleteItem itemId={item.id} />
@@ -87,20 +85,6 @@ export default async function DesktopBasket() {
 							<span>Total:</span>
 							<span>{totalPrice()} zł</span>
 						</div>
-
-						<form className="flex items-center justify-between rounded-md border dark:border-gray-700 border-gray-400">
-							<input
-								required
-								type="text"
-								name="promocode"
-								autoComplete="off"
-								placeholder="Enter promocode"
-								className="bg-transparent focus:bg-gray-50 font-medium outline-none px-4 dark:text-gray-300 dark:placeholder:text-gray-300 dark:bg-transparent"
-							/>
-							<button className="bg-gradient-green bg-gradient-green-hover flex justify-center items-center rounded-r-md h-[2.6rem] cursor-pointer">
-								<FaChevronRight className="text-white" />
-							</button>
-						</form>
 
 						<Link
 							href="/delivery"

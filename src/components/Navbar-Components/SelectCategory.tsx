@@ -19,7 +19,7 @@ export default function SelectCategory() {
 	};
 
 	const spanStyles = (category: string) => {
-		return `${selectValue === category && "text-slate-400"}`;
+		return `${selectValue === category && "text-slate-400 dark:text-slate-500"}`;
 	};
 
 	return (
